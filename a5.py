@@ -56,7 +56,7 @@ def store_registration_alert():
     while True:
         print('\n[Alert]'
               '\nAre you sure?'
-              '\nClicking "Submit" will make your store visible to all users.'
+              '\nSaying "Yes" will make your store visible to all users.'
               '\nIs this really what you want to do?')
         alert_answer = input('\nType 1 to say Yes.'
                              '\nType 2 to say No.'
