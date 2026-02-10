@@ -234,7 +234,7 @@ if __name__ == "__main__":
                               "email": "storeE@gmail.com",
                               "business_hours": "11am-6pm",
                               "address": "Random address 5",
-                              "menu": "milkshake, matcha latte",
+                              "menu": "milkshake, matcha latte, chocolate ice cream",
                               "description": "My store has the best quality"}}
 
     current_page = "Login"
