@@ -27,7 +27,7 @@ def main_page():
     print("[Main Page]")
     while True:
         print("Store Registration: For store owners, register your own store. (Requires the details of your store)")
-        print("Store Search: For customers, search the stores that match your keyword.")
+        print("Store Search: For customers, search for stores whose names match your keyword.")
         main_choice = input("\nFor Store Registration, Type 1."
                             "\nFor Store Search, Type 2."
                             "\n").strip()
@@ -130,8 +130,13 @@ def store_details():
     return user_phone, user_email, user_hours, user_address, user_menu, user_description
 
 def store_search():
-    print("\nPlease enter a keyword for store name search.")
-    user_search = input("\nSearch: ").strip().lower()
+    while True:
+        print("\nPlease enter a keyword for store name search.")
+        user_search = input("\nSearch: ").strip().lower()
+        if user_search == "":
+            print("Invalid input. Try again.")
+        else:
+            break
 
     return user_search
 
@@ -203,11 +208,34 @@ if __name__ == "__main__":
     valid_id_pw = {"id_sample": "pw_sample"}
     store_dict = {"Store A": {"phone_number": "000-000-0000",
                               "email": "storeA@gmail.com",
-                              "business_hours": "12pm-2pm"},
-                  "Store B": {},
-                  "Store C": {},
-                  "Store D": {},
-                  "Store E": {}}
+                              "business_hours": "12pm-2pm",
+                              "address": "Random address 1",
+                              "menu": "burger",
+                              "description": "My store is the best"},
+                  "Store B": {"phone_number": "000-000-0001",
+                              "email": "storeB@gmail.com",
+                              "business_hours": "12pm-8pm",
+                              "address": "Random address 2",
+                              "menu": "cake",
+                              "description": "My store is the very best"},
+                  "Store C": {"phone_number": "000-000-0002",
+                              "email": "storeC@gmail.com",
+                              "business_hours": "12pm-8pm",
+                              "address": "Random address 3",
+                              "menu": "pie",
+                              "description": "My store is the very best"},
+                  "Store D": {"phone_number": "000-000-0003",
+                              "email": "storeD@gmail.com",
+                              "business_hours": "11am-2pm",
+                              "address": "Random address 4",
+                              "menu": "chocolate, cupcake",
+                              "description": "My store is the tastiest"},
+                  "Store E": {"phone_number": "000-000-0004",
+                              "email": "storeE@gmail.com",
+                              "business_hours": "11am-6pm",
+                              "address": "Random address 5",
+                              "menu": "milkshake, matcha latte",
+                              "description": "My store has the best quality"}}
 
     current_page = "Login"
     line()
