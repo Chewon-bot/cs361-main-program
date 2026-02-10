@@ -94,7 +94,7 @@ def store_details():
             user_email += "icloud.com"
             break
         elif user_email_select == "4":
-            user_email += input("Enter Email domain manually")
+            user_email += input("Enter Email domain manually: ")
             break
         else:
             print("Invalid input. Try again.")
@@ -264,6 +264,7 @@ if __name__ == "__main__":
                 continue
             else:
                 store_name = store_registration(store_dict)
+                store_dict[store_name] = {}
                 line()
                 alert_answer = store_registration_alert()
                 if alert_answer == "1":
@@ -286,7 +287,6 @@ if __name__ == "__main__":
                 continue
             else:
                 user_phone, user_email, user_hours, user_address, user_menu, user_description = store_details()
-                store_dict[store_name] = {}
                 store_dict[store_name]["phone_number"] = user_phone
                 store_dict[store_name]["email"] = user_email
                 store_dict[store_name]["business_hours"] = user_hours
